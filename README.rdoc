@@ -7,3 +7,6 @@ This Rails app is a proof of concept for a new SmartTV Remote Control interface 
 * Back-interaction: custom actions on your smartphone's screen depending on what was hovered with a pointer on your TV screen.
 
 * Smooth movements: make pointer movements more soft with some extrapolation algorythms
+
+
+(c) Copyrights by Andrew Shaydurov, 2015. All rights reserved.

@@ -16,6 +16,8 @@ gem 'thin'
 gem 'jbuilder'
 gem 'slim-rails'
 
+gem 'websocket-rails'
+
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
