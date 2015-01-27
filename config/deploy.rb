@@ -23,7 +23,7 @@ set :deploy_to, '/home/gearhead/chromecast_remote_control'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []) + %w{config/database.yml config/secrets.yml db/production.sqlite3}
+set :linked_files, fetch(:linked_files, []) + %w{config/database.yml config/secrets.yml config/thin.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle}

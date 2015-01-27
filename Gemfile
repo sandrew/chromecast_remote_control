@@ -18,6 +18,10 @@ gem 'slim-rails'
 
 gem 'websocket-rails'
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
