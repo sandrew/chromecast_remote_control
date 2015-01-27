@@ -1,0 +1,9 @@
+== Chromecast Remote Control with a smartphone
+
+This Rails app is a proof of concept for a new SmartTV Remote Control interface using your smartphone's gyroscope. Move your phone as a 3D-mouse and watch pointer moving on screen.
+
+=== Next steps
+
+* Back-interaction: custom actions on your smartphone's screen depending on what was hovered with a pointer on your TV screen.
+
+* Smooth movements: make pointer movements more soft with some extrapolation algorythms
