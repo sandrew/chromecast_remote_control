@@ -1,4 +1,6 @@
 class IndexController < ApplicationController
+  layout 'chromecast', only: :chromecast
+
   def index
   end
 
