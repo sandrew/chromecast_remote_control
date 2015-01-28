@@ -182,6 +182,8 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sugar-rails (1.4.1)
+      railties (>= 3.0.0)
     temple (0.7.5)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -237,6 +239,7 @@ DEPENDENCIES
   slim-rails
   spring
   sqlite3
+  sugar-rails
   therubyracer
   thin
   turbolinks

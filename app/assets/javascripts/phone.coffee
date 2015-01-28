@@ -1,10 +1,17 @@
 #= require jquery
 #= require materialize-sprokets
+#= require sugar
 #= require websocket_rails/main
 
 appID = 'BDCCBA9B'
 namespace = 'urn:x-cast:com.google.cast.sample.remote_control'
 window.session = null
+
+startCursor = ->
+  unless $('body').hasClass 'moving'
+    $('body').addClass('moving').on 'mousemove', ((e) ->
+      window.session.sendMessage 'urn:x-cast:com.google.cast.sample.remote_control', {x: e.clientX, y: e.clientY}, (->), (->)
+    ).throttle(10)
 
 receiverListener = (e) ->
   if e == chrome.cast.ReceiverAvailability.AVAILABLE
@@ -16,7 +23,7 @@ receiverListener = (e) ->
 
 onRequestSessionSuccess = (e) ->
   window.session = e
-  window.session.sendMessage namespace, 'Handshake', (->), onMessageError
+  startCursor()
 
 sessionUpdateListener = ->
 
@@ -28,7 +35,8 @@ onMessageError = onLaunchError = onError = (message) ->
   console.log message
 
 sessionListener = (e) ->
-  console.log 'New session ID:' + e.sessionId
+  if e.status == 'connected'
+    startCursor()
   window.session = e
   window.session.addUpdateListener sessionUpdateListener
   # session.addMessageListener namespace, receiverMessage
@@ -36,7 +44,7 @@ sessionListener = (e) ->
 initializeCastApi = ->
   sessionRequest = new chrome.cast.SessionRequest appID
   apiConfig = new chrome.cast.ApiConfig sessionRequest, sessionListener, receiverListener
-  console.log chrome.cast.initialize apiConfig, onInitSuccess, onError
+  chrome.cast.initialize apiConfig, onInitSuccess, onError
 
 window['__onGCastApiAvailable'] = (loaded, errorInfo) ->
   if loaded
