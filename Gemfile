@@ -4,6 +4,7 @@ gem 'rails', '~> 4.2.0'
 gem 'sqlite3'
 
 gem 'sass-rails'
+gem 'materialize-sass', github: 'mkhairi/materialize-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby

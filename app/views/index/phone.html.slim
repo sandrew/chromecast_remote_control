@@ -1,3 +1,9 @@
-h1 Hello, Phone!
-
 = javascript_include_tag 'phone'
+= javascript_include_tag '//www.gstatic.com/cv/js/sender/v1/cast_sender.js'
+
+.container
+  h1 Hello, Phone!
+
+  a.btn-large.disabled.start-cast href='#'
+    i.mdi-hardware-cast.left
+    | Cast

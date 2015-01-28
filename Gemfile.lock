@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/mkhairi/materialize-sass.git
+  revision: a74194d77bc0d075aaf54e5ad16668d632ef28b4
+  specs:
+    materialize-sass (0.94.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -223,6 +229,7 @@ DEPENDENCIES
   coffee-rails
   jbuilder
   jquery-rails
+  materialize-sass!
   pg
   pry-rails
   rails (~> 4.2.0)
